@@ -2,16 +2,24 @@
 @use 'fonts';
 @use 'colors';
 
-header {
+.header {
   display: flex;
   justify-content: center;
+  align-items: center;
+  background-color: colors.$bg-color-1;
+  height: 4em;
+  color: #F2E205;
 }
-footer {
+.page-header {
+  font-size: fonts.$large;
+}
+.footer {
   height: 4em;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: colors.$bg-color-1;
+  color: #F2E205;
 }
 .content-container {
   display: flex;
@@ -22,13 +30,32 @@ footer {
 .content {
   display: flex;
   flex-grow: 1;
-  background-color: colors.$bg-color-2;
+  flex-direction: column;
+  justify-content: center;
+}
+.carousel-container {
+  display: flex;
 }
 .carousel {
   display: flex;
+  height: 4em;
+  overflow-x: hidden;
 }
-.carousel-item-img {
-  height: 100px;
+.btn-base {
+  background-color: transparent;
+  border: none;
+  height: 5em;
+}
+.btn-img {
+  height: 100%;
+}
+.slide {
+  flex: 33.33% 0 0;
+  display: flex;
+  justify-content: center;
+}
+.slide-img {
+  height: 100%;
 }
 .github-icon {
   height: 2em;
