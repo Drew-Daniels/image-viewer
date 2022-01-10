@@ -72,6 +72,7 @@ footer {
 .content-container {
   display: flex;
   flex-direction: column;
+  background-color: gray;
   height: 100vh;
 }
 
@@ -79,6 +80,14 @@ footer {
   display: flex;
   flex-grow: 1;
   background-color: green;
+}
+
+.carousel {
+  display: flex;
+}
+
+.carousel-item-img {
+  height: 100px;
 }
 
 .github-icon {

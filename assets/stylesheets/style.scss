@@ -16,12 +16,19 @@ footer {
 .content-container {
   display: flex;
   flex-direction: column;
+  background-color: colors.$carousel;
   height: 100vh;
 }
 .content {
   display: flex;
   flex-grow: 1;
   background-color: colors.$bg-color-2;
+}
+.carousel {
+  display: flex;
+}
+.carousel-item-img {
+  height: 100px;
 }
 .github-icon {
   height: 2em;
