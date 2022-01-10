@@ -1,3 +1,8 @@
+// MODULE Level Constants
+const SLIDE_LIST = '.carousel';
+const VISIBLE_CLASS = 'visible';
+
+// GENERAL HELPER Functions
 const get = function(searchStr) {
   const result = document.querySelector(searchStr);
   return result;
@@ -27,8 +32,9 @@ const declassify = function(element, ...classesToRemove) {
     }
   })
 }
-const getCurrentSlideNum = function(slideList, visibleClass) {
-  const slideNodes= getAll(slideList + ' li');
+// IMAGE VIEWER functions
+const getCurrentSlideNum = function() {
+  const slideNodes= getAll(SLIDE_LIST + ' li');
   const slides = [...slideNodes];
   let currSlideNum;
   let classes;
@@ -36,41 +42,49 @@ const getCurrentSlideNum = function(slideList, visibleClass) {
   slides.forEach(function(slide) {
     i++;
     classes = getClasses(slide);
-    if (classes.includes(visibleClass)) {
+    if (classes.includes(VISIBLE_CLASS)) {
       currSlideNum = i;
     }
   })
   return currSlideNum;
 }
-const getCurrentSlide = function(slideList, visibleClass) {
-  const currSlideNum = getCurrentSlideNum(slideList, visibleClass);
-  const currSlide = getNthChild(slideList, currSlideNum);
+const getCurrentSlide = function() {
+  const currSlideNum = getCurrentSlideNum();
+  const currSlide = getNthChild(SLIDE_LIST, currSlideNum);
   return currSlide;
 }
-const getPrevSlide = function(slideList, visibleClass) {
-  const currSlideNum = getCurrentSlideNum(slideList, visibleClass);
-  const prevSlide = getNthChild(slideList, currSlideNum-1);
+const getPrevSlide = function() {
+  const currSlideNum = getCurrentSlideNum();
+  const prevSlide = getNthChild(SLIDE_LIST, currSlideNum-1);
   return prevSlide;
 }
-const getNextSlide = function(slideList, visibleClass) {
-  const currSlideNum = getCurrentSlideNum(slideList, visibleClass);
-  const nextSlide = getNthChild(slideList, currSlideNum+1);
+const getNextSlide = function() {
+  const currSlideNum = getCurrentSlideNum();
+  const nextSlide = getNthChild(SLIDE_LIST, currSlideNum+1);
   return nextSlide;
 }
-const movePrev = function(slideList, visibleClass) {
-  const currSlide = getCurrentSlide(slideList, visibleClass);
-  const prevSlide = getPrevSlide(slideList, visibleClass);
-  declassify(currSlide, visibleClass);
-  classify(prevSlide, visibleClass);
+const movePrev = function() {
+  const currSlide = getCurrentSlide();
+  const prevSlide = getPrevSlide();
+  declassify(currSlide, VISIBLE_CLASS);
+  classify(prevSlide, VISIBLE_CLASS);
 }
-const moveNext = function(slideList, visibleClass) {
-  const currSlide = getCurrentSlide(slideList, visibleClass);
-  const nextSlide = getNextSlide(slideList, visibleClass);
-  declassify(currSlide, visibleClass);
-  classify(nextSlide, visibleClass);
+const moveNext = function() {
+  const currSlide = getCurrentSlide();
+  const nextSlide = getNextSlide();
+  declassify(currSlide, VISIBLE_CLASS);
+  classify(nextSlide, VISIBLE_CLASS);
+}
+const addNextBtnEvent = function(nextBtnSearchStr) {
+  const nextBtn = get(nextBtnSearchStr);
+  nextBtn.addEventListener('click', moveNext);
+}
+const addPrevBtnEvent = function(prevBtnSearchStr) {
+  const prevBtn = get(prevBtnSearchStr);
+  prevBtn.addEventListener('click', movePrev);
 }
 
 export {
-  movePrev,
-  moveNext,
+  addNextBtnEvent,
+  addPrevBtnEvent,
 }

@@ -104,6 +104,7 @@ html, body, button {
   justify-content: space-between;
   align-items: center;
   margin-top: 1em;
+  min-height: 10em;
 }
 
 .carousel {
@@ -127,6 +128,7 @@ html, body, button {
 .slide {
   height: 0;
   justify-content: center;
+  transition: height 2s ease-in-out;
   display: flex;
 }
 

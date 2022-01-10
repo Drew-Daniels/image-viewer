@@ -1,9 +1,8 @@
 import * as imageViewer from './image-viewer.js';
 
-const SLIDE_LIST = '.carousel';
-const VISIBLE_CLASS = 'visible';
+const main = function() {
+  imageViewer.addPrevBtnEvent('.btn-previous');
+  imageViewer.addNextBtnEvent('.btn-next');
+}
 
-// Testing
-imageViewer.moveNext(SLIDE_LIST, VISIBLE_CLASS)
-imageViewer.moveNext(SLIDE_LIST, VISIBLE_CLASS)
-imageViewer.moveNext(SLIDE_LIST, VISIBLE_CLASS)
+main();
