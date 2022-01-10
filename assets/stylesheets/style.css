@@ -109,7 +109,6 @@ html, body, button {
 .carousel {
   display: flex;
   max-height: 10em;
-  overflow-x: hidden;
 }
 
 .btn-base {
@@ -126,9 +125,17 @@ html, body, button {
 }
 
 .slide {
-  flex: 0 0 33.33%;
-  display: flex;
+  height: 0;
   justify-content: center;
+  display: flex;
+}
+
+.slide-img {
+  height: 100%;
+}
+
+.slide.visible {
+  height: 10em;
 }
 
 .nav-circles {
@@ -150,27 +157,12 @@ html, body, button {
   height: 100%;
 }
 
-.slide-img {
-  height: 100%;
-}
-
 .github-icon {
   height: 2em;
 }
 
 .hidden {
   display: none;
-}
-
-@media (max-width: 800px) {
-  .slide {
-    flex: 0 0 50%;
-  }
-}
-@media (max-width: 600px) {
-  .slide {
-    flex: 0 0 100%;
-  }
 }
 
 /*# sourceMappingURL=style.css.map */
