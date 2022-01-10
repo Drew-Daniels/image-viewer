@@ -71,7 +71,9 @@ html, body, button {
 
 .footer {
   height: 4em;
+  padding: 1em 0;
   display: flex;
+  justify-content: space-around;
   flex-direction: column;
   align-items: center;
   background-color: #037F8C;
@@ -118,12 +120,31 @@ html, body, button {
   justify-content: center;
 }
 
+.nav-circles {
+  display: flex;
+  margin-top: 2em;
+  justify-content: center;
+}
+
+.nav-circle {
+  height: 1em;
+  margin-right: 1em;
+}
+
+.nav-circle-img {
+  height: 100%;
+}
+
 .slide-img {
   height: 100%;
 }
 
 .github-icon {
   height: 2em;
+}
+
+.hidden {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */
