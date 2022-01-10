@@ -2,12 +2,16 @@
 @use 'fonts';
 @use 'colors';
 
+* > {
+  box-sizing: border-box;
+}
 .header {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: colors.$bg-color-1;
   height: 4em;
+  padding: 1em 0;
   color: #F2E205;
 }
 .page-header {
@@ -37,13 +41,19 @@
 }
 .carousel-container {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1em;
 }
 .carousel {
   display: flex;
-  height: 4em;
+  max-height: 10em;
   overflow-x: hidden;
 }
 .btn-base {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: transparent;
   border: none;
   height: 5em;
@@ -52,18 +62,22 @@
   height: 100%;
 }
 .slide {
-  flex: 33.33% 0 0;
+  flex: 0 0 33.33%;
   display: flex;
   justify-content: center;
 }
 .nav-circles {
   display: flex;
-  margin-top: 2em;
+  margin: 2em 0;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .nav-circle {
-  height: 1em;
-  margin-right: 1em;
+  max-width: 1.5em;
+  flex-shrink: 0;
+  flex-grow: 0;
+  display: flex;
+  justify-content: center;
 }
 .nav-circle-img {
   height: 100%;
@@ -76,4 +90,15 @@
 }
 .hidden {
   display: none;
+}
+
+@media (max-width: 800px) {
+  .slide {
+    flex: 0 0 50%;
+  }
+}
+@media (max-width: 600px) {
+  .slide {
+    flex: 0 0 100%;
+  }
 }
