@@ -148,7 +148,7 @@ html, body, button {
 }
 
 .nav-circle {
-  max-width: 1.5em;
+  width: 1.5em;
   flex-shrink: 0;
   flex-grow: 0;
   display: flex;
