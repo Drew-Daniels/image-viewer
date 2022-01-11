@@ -1,7 +1,6 @@
 // MODULE Level Constants
 const SLIDE_LIST = '.carousel';
 const NAV_CIRCLE_LIST = '.nav-circles';
-const NAV_CIRCLE_CLASS = '.nav-circle';
 const VISIBLE_CLASS = 'visible';
 const HIDDEN_CLASS = 'hidden';
 
